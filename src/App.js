@@ -13,7 +13,7 @@ function App() {
   } )
   const dispatch = useDispatch()
   return (
-    <div className="App" style={{ paddingTop: '10px' }}>
+    <div className="App">
       <Card />
     </div>
   );
