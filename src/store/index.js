@@ -1,4 +1,4 @@
 import { createStore } from 'redux'
-import { Reducers } from '../reducers'
+import reducer from '../reducers/api'
 
-export const Store = createStore(Reducers)
+export const Store = createStore(reducer)
