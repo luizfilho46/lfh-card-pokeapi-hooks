@@ -13,7 +13,8 @@ const reducer = (state = initialState, { type, response, exception } = {}) => {
             return { ...state, status: SUCCESS, response }
         case ERROR:
             return { ...state, status: ERROR, response }
-            
+        default:
+            return { ...state, status: SUCCESS, response }
     }
 }
 

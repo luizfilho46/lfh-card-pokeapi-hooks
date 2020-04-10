@@ -11,6 +11,7 @@ const PokeApiRequest = ( endpoint, { verb = 'get', params = {} } = {}) => {
 
         try {
             const response = await axios[verb](endpoint, params)
+            console.log(response)
             dispatch(success(response))
         } catch (err) {
             dispatch(error(err))

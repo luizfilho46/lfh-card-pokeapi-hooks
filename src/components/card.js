@@ -1,6 +1,6 @@
 import React, {  useState } from 'react'
 import Request from '../hooks/index'
-import { FETCHING, SUCCESS, ERROR } from '../actions/actionTypes'
+import { ERROR } from '../actions/actionTypes'
 import './card.css'
 
 function Card() {
@@ -22,15 +22,15 @@ function Card() {
             </button>
             <div className="FlipCardInner">
                 <div className="FlipCardFront">
-                    <img src={status == ERROR ? null : (response ? response.data.sprites.back_shiny : null)}  />
+                    <img src={status === ERROR ? null : (response ? response.data.sprites.back_shiny : null)} alt="pokemon shiny" />
                     <div className="Container">
-                        <h4>{status == ERROR ? null : (response ? response.data.name : null)}</h4>
+                        <h4>{status === ERROR ? null : (response ? response.data.name : null)}</h4>
                     </div>
                 </div>
                 <div className="FlipCardBack">
-                <img src={status == ERROR ? null : (response ? response.data.sprites.front_default : null)} />
+                <img src={status === ERROR ? null : (response ? response.data.sprites.front_default : null)} alt="pokemon default" />
                     <div className="Container">
-                        <h4>{status == ERROR ? null : (response ? response.data.types[0].type.name: null)}</h4>
+                        <h4>{status === ERROR ? null : (response ? response.data.types[0].type.name: null)}</h4>
                     </div>
                 </div>
             </div>
